@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const LeaderTypeContainer = styled.div`
-  height: 100vh;
+  height: 350px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +18,8 @@ export const HeaderUnderline = styled.div`
 
 export const LeaderLinkHeader = styled.h3`
   text-align: center;
+  margin-top: 0.5em;
+  font-size: 1.2rem;
   display: table-caption;
   position: relative;
   z-index: 1;
@@ -31,7 +34,7 @@ export const LeaderLinkContainer = styled.div`
 
   &:hover {
     ${LeaderLinkHeader} {
-      /* color: ${(props) => props.colour}; */
+      color: ${(props) => props.colour};
     }
 
     ${HeaderUnderline} {

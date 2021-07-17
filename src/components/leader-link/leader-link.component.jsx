@@ -1,8 +1,5 @@
 import { useHistory, useRouteMatch } from 'react-router';
-import { Link } from 'react-scroll';
 
-import { ArrowContainer } from '../../global.styles';
-import { ReactComponent as Arrow } from '../../assets/arrow.svg';
 import {
   LeaderLinkHeader,
   LeaderLinkContainer,
@@ -19,12 +16,6 @@ const LeaderLink = ({ colour, exemplar_image, name, id, typesLength }) => {
 
   return (
     <LeaderTypeContainer id={id}>
-      <ArrowContainer top>
-        <Link to={id !== 0 ? id - 1 : 'header'} smooth={true}>
-          <Arrow />
-        </Link>
-      </ArrowContainer>
-
       <LeaderLinkContainer
         colour={colour}
         onClick={() =>
@@ -41,16 +32,7 @@ const LeaderLink = ({ colour, exemplar_image, name, id, typesLength }) => {
           <HeaderUnderline colour={colour} />
         </LeaderLinkHeader>
       </LeaderLinkContainer>
-
-      {id !== typesLength - 1 ? (
-        <ArrowContainer bottom>
-          <Link to={id + 1} smooth={true}>
-            <Arrow />
-          </Link>
-        </ArrowContainer>
-      ) : null}
     </LeaderTypeContainer>
   );
 };
-
 export default LeaderLink;
