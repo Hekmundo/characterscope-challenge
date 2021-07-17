@@ -50,14 +50,23 @@ export const HeroImage = styled.img`
 export const ArrowContainer = styled.button`
   cursor: pointer;
   fill: #333;
-  opacity: 0.2;
+  opacity: 0;
   width: 50px;
   position: absolute;
   transform: rotate(90deg);
   bottom: 4vh;
 
-  animation: jump 5s infinite;
-  animation-timing-function: ease;
+  animation: 5s ease 1.4s infinite forwards jump, fade-in 1.4s forwards linear;
+
+  @keyframes fade-in {
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 0.2;
+    }
+  }
 
   @keyframes jump {
     0% {
@@ -78,6 +87,7 @@ export const ArrowContainer = styled.button`
 
     40% {
       bottom: 4vh;
+      opacity: 0.2;
     }
   }
 

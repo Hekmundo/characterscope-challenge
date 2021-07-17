@@ -8,7 +8,7 @@ const LeadersPreview = () => {
   const { types } = useContext(PrismicContext);
 
   return (
-    <LeadersContainer id='leaders-container' className='leaders-container'>
+    <LeadersContainer id='leaders-container'>
       {types.map((props, index) => (
         <LeaderLink
           id={index}

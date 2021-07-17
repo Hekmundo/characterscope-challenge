@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const LeaderTypeContainer = styled.div`
-  height: 350px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  height: 310px;
+
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    &:last-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
 `;
 
 export const HeaderUnderline = styled.div`

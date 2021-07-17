@@ -49,4 +49,8 @@ export const NavContainer = styled.nav`
   ${containerStyles}
   justify-content: space-between;
   padding: 0 2vw;
+
+  @media screen and (min-width: 600px) {
+    padding: 0 10vw;
+  }
 `;
