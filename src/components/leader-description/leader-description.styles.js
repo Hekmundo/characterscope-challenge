@@ -93,7 +93,6 @@ export const ListSection = styled.section`
 `;
 
 export const ListHeader = styled.h4`
-  font-weight: 600;
   font-size: 1.2em;
   margin-bottom: 0;
 `;

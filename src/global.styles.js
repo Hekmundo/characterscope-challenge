@@ -26,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .heading3 {
-    font-weight: 400;
+    font-weight: 500;
+  }
+
+  .heading4 {
+    font-weight: 500;
   }
 `;
