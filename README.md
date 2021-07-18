@@ -12,9 +12,13 @@ Develop:<br/>
 Build: <br/>
 `npm run build`
 
+<br/>
+
 ## State Management
 
 For this challenge I used React as a UI framework and took the approach of storing the Prismic CMS data as a single global state. I distributed state to the rest of the app by wrapping it in a Context API HOC function that provides the data to all its children. The CMS data is fetched at runtime and until the data is available locally the page will render a simple spinner.
+
+<br/>
 
 ## Design Approach
 
