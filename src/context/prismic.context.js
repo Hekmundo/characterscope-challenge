@@ -16,8 +16,6 @@ const PrismicProvider = ({ children }) => {
     });
   }, []);
 
-  console.log(data);
-
   return Object.keys(data).length ? (
     <PrismicContext.Provider value={data}>{children}</PrismicContext.Provider>
   ) : (
