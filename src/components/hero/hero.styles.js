@@ -21,7 +21,6 @@ export const Title = styled.h1`
   margin: 0.67em 0.4em 60px;
   opacity: 0;
   bottom: -20px;
-  text-shadow: 1px 1px 5px #eee;
 
   animation: fade-up 1.4s forwards linear;
 
@@ -55,7 +54,7 @@ export const HeroImage = styled.img`
 
 export const ArrowContainer = styled.div`
   cursor: pointer;
-  fill: #333;
+  fill: #fefefe;
   opacity: 0.2;
   width: 50px;
   position: absolute;
