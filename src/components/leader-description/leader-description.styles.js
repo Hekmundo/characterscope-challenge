@@ -8,7 +8,7 @@ export const LeaderDescriptionContainer = styled.div`
   box-sizing: border-box;
   padding: 25px;
   font-size: 1.2rem;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 `;
 
@@ -63,11 +63,13 @@ export const ParagraphSection = styled.section`
 `;
 
 export const ParagraphHeader = styled.h3`
-  margin-bottom: 0;
   font-weight: 600;
   font-size: 1.3em;
   max-width: 20ch;
-  align-self: flex-start;
+
+  @media screen and (min-width: 700px) {
+    margin-left: auto;
+  }
 `;
 
 export const DescriptionParagraph = styled.p`
@@ -80,7 +82,7 @@ export const ListSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 10px 10px;
   width: 100%;
   border: 1px solid #eee;
   border-left: 3px solid ${(props) => props.colour};
