@@ -9,13 +9,8 @@ const LeadersPreview = () => {
 
   return (
     <LeadersContainer id='leaders-container'>
-      {types.map((props, index) => (
-        <LeaderLink
-          id={index}
-          typesLength={types.length}
-          key={props.name[0].text}
-          {...props}
-        />
+      {types.map((props) => (
+        <LeaderLink key={props.name[0].text} {...props} />
       ))}
     </LeadersContainer>
   );

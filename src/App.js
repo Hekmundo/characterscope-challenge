@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import PrismicProvider from './context/prismic.context';
 
 import HomePage from './pages/home-page/home-page.component';
 import LeaderPage from './pages/leader-page/leader-page.component';
@@ -6,13 +7,13 @@ import { GlobalStyle } from './global.styles';
 
 const App = () => {
   return (
-    <div>
+    <PrismicProvider>
       <GlobalStyle />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/leader' component={LeaderPage} />
+        <Route path={`/:leaderId`} component={LeaderPage} />
       </Switch>
-    </div>
+    </PrismicProvider>
   );
 };
 

@@ -21,6 +21,7 @@ export const Title = styled.h1`
   margin: 0.67em 0.4em 60px;
   opacity: 0;
   bottom: -20px;
+  text-shadow: 1px 1px 5px #eee;
 
   animation: fade-up 1.4s forwards linear;
 
@@ -89,9 +90,5 @@ export const ArrowContainer = styled.button`
       bottom: 4vh;
       opacity: 0.2;
     }
-  }
-
-  &:hover {
-    opacity: 0.8;
   }
 `;

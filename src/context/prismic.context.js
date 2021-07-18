@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect } from 'react';
 import { fetchData } from './prismic.utils';
 
+import Spinner from '../components/spinner/spinner.component';
+
 export const PrismicContext = createContext({});
 
 const PrismicProvider = ({ children }) => {
   const [data, setData] = useState({});
-  console.log(data);
 
   useEffect(() => {
     fetchData().then((response) => {
@@ -18,7 +19,7 @@ const PrismicProvider = ({ children }) => {
   return Object.keys(data).length ? (
     <PrismicContext.Provider value={data}>{children}</PrismicContext.Provider>
   ) : (
-    <div></div>
+    <Spinner />
   );
 };
 
