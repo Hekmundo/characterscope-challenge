@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import HeaderLogo from '../../assets/header-logo.png';
 import {
   LogoContainer,
@@ -11,10 +13,12 @@ const Navbar = ({ dark }) => {
   return (
     <header>
       <NavContainer dark={dark}>
-        <LogoContainer>
-          <img src={HeaderLogo} alt='' />
-          <CompanyName>CharacterScope</CompanyName>
-        </LogoContainer>
+        <Link to='/'>
+          <LogoContainer>
+            <img src={HeaderLogo} alt='' />
+            <CompanyName>CharacterScope</CompanyName>
+          </LogoContainer>
+        </Link>
         <MenuButton>
           <MenuRow />
           <MenuRow />

@@ -28,7 +28,7 @@ export const LeaderHeader = styled.h1`
   color: ${(props) => props.colour};
   font-weight: 600;
   font-size: 7vw;
-  margin-left: 5px;
+  margin-left: 10px;
 
   @media screen and (min-width: 600px) {
     font-size: 2.5em;

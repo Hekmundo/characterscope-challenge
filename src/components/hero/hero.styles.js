@@ -10,7 +10,7 @@ const containerStyles = css`
 export const HeroContainer = styled.div`
   height: 100%;
   ${containerStyles}
-  background-color: #eee;
+  background-color: #f8f8f8;
 `;
 
 export const Title = styled.h1`
@@ -53,24 +53,28 @@ export const HeroImage = styled.img`
   }
 `;
 
-export const ArrowContainer = styled.button`
+export const ArrowContainer = styled.div`
   cursor: pointer;
   fill: #333;
-  opacity: 0;
+  opacity: 0.2;
   width: 50px;
   position: absolute;
   transform: rotate(90deg);
   bottom: 4vh;
 
+  &:hover {
+    opacity: 0.6;
+  }
+
   animation: 5s ease 1.4s infinite forwards jump, fade-in 1.4s forwards linear;
 
   @keyframes fade-in {
     50% {
-      opacity: 0;
+      fill: #fefefe;
     }
 
     100% {
-      opacity: 0.2;
+      fill: #333;
     }
   }
 
@@ -93,7 +97,6 @@ export const ArrowContainer = styled.button`
 
     40% {
       bottom: 4vh;
-      opacity: 0.2;
     }
   }
 `;

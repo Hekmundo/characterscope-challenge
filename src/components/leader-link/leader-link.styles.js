@@ -31,7 +31,7 @@ export const LeaderLinkHeader = styled.h3`
   z-index: 1;
 `;
 
-export const LeaderLinkContainer = styled.div`
+export const LeaderLinkContainer = styled.a`
   cursor: pointer;
   display: flex;
   flex-direction: column;
