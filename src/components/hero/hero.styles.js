@@ -1,10 +1,108 @@
 import styled, { css } from 'styled-components';
 
+const red = '#bf1224';
+const purple = '#823cbe';
+const pink = '#f30b6f';
+const silver = '#c0c0c0';
+const orange = '#f3a123';
+const yellow = '#f8c31c';
+const green = '#b0bb36';
+const blue = '#67a6dc';
+const turquoise = '#6dc8bf';
+
 const containerStyles = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+export const HiddenImage = styled.img`
+  width: 55px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 200ms ease;
+  cursor: pointer;
+
+  /* Positioning for each image */
+  ${(props) => {
+    switch (props.colour) {
+      case red:
+        return css`
+          bottom: 86px;
+          right: 75px;
+        `;
+      case purple:
+        return css`
+          bottom: 37px;
+          right: 121px;
+        `;
+      case pink:
+        return css`
+          top: 120px;
+          right: 32px;
+        `;
+      case silver:
+        return css`
+          bottom: 83px;
+          left: 77px;
+        `;
+      case orange:
+        return css`
+          left: 32px;
+          top: 120px;
+        `;
+      case yellow:
+        return css`
+          top: 75px;
+          left: 77px;
+        `;
+      case green:
+        return css`
+          top: 75px;
+          right: 77px;
+        `;
+      case blue:
+        return css`
+          top: 120px;
+          right: 122px;
+        `;
+      case turquoise:
+        return css`
+          top: 31px;
+          right: 122px;
+        `;
+      default:
+        break;
+    }
+  }}
+
+  animation: show-image 1ms 1.3s forwards ease, glimmer 2s 1.3s ease-in-out;
+  filter: opacity(0%);
+
+  @keyframes show-image {
+    100% {
+      filter: opacity(100%);
+    }
+  }
+
+  @keyframes glimmer {
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
 `;
 
 export const HeroContainer = styled.div`
@@ -35,10 +133,15 @@ export const Title = styled.h1`
   }
 `;
 
+export const ImageContainer = styled.div`
+  position: relative;
+`;
+
 export const HeroImage = styled.img`
   opacity: 0;
   animation: logo-spin 1.4s forwards ease-in-out;
   box-sizing: border-box;
+  width: 300px;
 
   @keyframes logo-spin {
     100% {

@@ -16,6 +16,7 @@ const PrismicProvider = ({ children }) => {
     });
   }, []);
 
+  // Provides Prismic CMS data to entire app
   return Object.keys(data).length ? (
     <PrismicContext.Provider value={data}>{children}</PrismicContext.Provider>
   ) : (
