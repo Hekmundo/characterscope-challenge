@@ -23,31 +23,9 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const MenuRow = styled.span`
-  height: 2px;
-  width: 22px;
-  background-color: #888;
-  margin: 2px 0;
-`;
-
-export const MenuButton = styled.button`
-  ${containerStyles}
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-  padding: 8px 10px;
-  margin-right: 10px;
-
-  &:hover {
-    background-color: #ddd;
-  }
-`;
-
 export const NavContainer = styled.nav`
   ${containerStyles}
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 2vw;
   background-color: ${(props) => (props.dark ? '#f8f8f8' : '#fefefe')};
   border-bottom: 1px solid #e7e7e7;
