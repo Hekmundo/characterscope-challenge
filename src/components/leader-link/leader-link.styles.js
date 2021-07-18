@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const LeaderTypeContainer = styled.div`
   height: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   @media screen and (min-width: 600px) and (max-width: 900px) {
     &:last-child {
@@ -32,7 +36,6 @@ export const LeaderLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   &:hover {
     ${LeaderLinkHeader} {

@@ -1,11 +1,27 @@
-const getContentByType = (description, contentType, multiple) => {
-  return multiple
-    ? description.filter((content) => content.type === contentType)
-    : description.find((content) => content.type === contentType);
-};
+import { useHistory } from 'react-router-dom';
+
+import { getContentByType } from './leader-description.utils';
+import {
+  LeaderDescriptionContainer,
+  BackButton,
+  LeaderHeader,
+  ListSection,
+  DescriptionParagraph,
+  LeaderImage,
+  List,
+  ListItem,
+  HeroContainer,
+  ParagraphHeader,
+  ListHeader,
+  HeaderUnderline,
+  StyledArrow,
+  ParagraphAndListContainer,
+  ParagraphSection,
+} from './leader-description.styles';
 
 const LeaderDescription = ({ leader }) => {
-  console.log(leader);
+  const history = useHistory();
+
   const { name, exemplar_image, description, colour } = leader;
   const { url, dimensions, alt } = exemplar_image;
 
@@ -15,22 +31,45 @@ const LeaderDescription = ({ leader }) => {
   const listItems = getContentByType(description, 'list-item', true);
 
   return (
-    <div>
-      <h1 className={name[0].type}>{name[0].text}</h1>
-      <img
-        style={{ width: dimensions.width, height: dimensions.height }}
-        src={url}
-        alt={alt}
-      />
-      <h3>{heading3.text}</h3>
-      <h4>{heading4.text}</h4>
-      <p>{paragraph.text}</p>
-      <ul>
-        {listItems.map((li) => (
-          <li key={li.text}>{li.text}</li>
-        ))}
-      </ul>
-    </div>
+    <LeaderDescriptionContainer>
+      <HeroContainer>
+        <LeaderImage
+          width={dimensions.width}
+          height={dimensions.height}
+          src={url}
+          alt={alt}
+        />
+        <LeaderHeader colour={colour}>{name[0].text}</LeaderHeader>
+      </HeroContainer>
+
+      <ParagraphAndListContainer>
+        <ParagraphSection>
+          <ParagraphHeader className={heading3.type}>
+            {heading3.text}
+          </ParagraphHeader>
+          <DescriptionParagraph>{paragraph.text}</DescriptionParagraph>
+        </ParagraphSection>
+
+        <ListSection colour={colour}>
+          <ListHeader className={heading4.type}>
+            {heading4.text}
+            <HeaderUnderline colour={colour} />
+          </ListHeader>
+          <List>
+            {listItems.map((li) => (
+              <ListItem key={li.text} className={li.type}>
+                {li.text}
+              </ListItem>
+            ))}
+          </List>
+        </ListSection>
+      </ParagraphAndListContainer>
+
+      <BackButton colour={colour} onClick={() => history.goBack()}>
+        <StyledArrow />
+        <span>Back</span>
+      </BackButton>
+    </LeaderDescriptionContainer>
   );
 };
 

@@ -7,10 +7,10 @@ import {
   MenuRow,
 } from './navbar.styles';
 
-const Navbar = () => {
+const Navbar = ({ dark }) => {
   return (
     <header>
-      <NavContainer>
+      <NavContainer dark={dark}>
         <LogoContainer>
           <img src={HeaderLogo} alt='' />
           <CompanyName>CharacterScope</CompanyName>

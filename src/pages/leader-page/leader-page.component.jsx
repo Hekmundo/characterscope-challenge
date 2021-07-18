@@ -20,7 +20,7 @@ const LeaderPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar dark />
       <LeaderDescription leader={currentLeader} />
       <Footer />
     </>

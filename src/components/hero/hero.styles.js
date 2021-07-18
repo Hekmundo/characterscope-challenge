@@ -39,12 +39,17 @@ export const Title = styled.h1`
 export const HeroImage = styled.img`
   opacity: 0;
   animation: logo-spin 1.4s forwards ease-in-out;
+  box-sizing: border-box;
 
   @keyframes logo-spin {
     100% {
       opacity: 1;
       transform: rotate(360deg);
     }
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 200px;
   }
 `;
 
