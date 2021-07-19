@@ -56,11 +56,13 @@ const LeaderDescription = ({ leader }) => {
             <HeaderUnderline colour={colour} />
           </ListHeader>
           <List>
-            {listItems.map((li) => (
-              <ListItem key={li.text} className={li.type}>
-                {li.text}
-              </ListItem>
-            ))}
+            {listItems
+              ? listItems.map((li) => (
+                  <ListItem key={li.text} className={li.type}>
+                    {li.text}
+                  </ListItem>
+                ))
+              : null}
           </List>
         </ListSection>
       </ParagraphAndListContainer>

@@ -9,11 +9,20 @@ const PrismicProvider = ({ children }) => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetchData().then((response) => {
-      if (response) {
-        setData(response);
-      }
-    });
+    const localStorage = window.localStorage;
+    const localJsonData = localStorage.getItem('data');
+    const localData = JSON.parse(localJsonData);
+
+    if (localData) {
+      setData(localData);
+    } else {
+      fetchData().then((response) => {
+        if (response) {
+          setData(response);
+          localStorage.setItem('data', JSON.stringify(response));
+        }
+      });
+    }
   }, []);
 
   // Provides Prismic CMS data to entire app
