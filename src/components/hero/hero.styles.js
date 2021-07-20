@@ -100,7 +100,7 @@ export const HiddenImage = styled.img`
     opacity: 1;
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 360px) {
     display: none;
   }
 `;
@@ -109,7 +109,7 @@ export const HeroContainer = styled.div`
   height: 100%;
   ${containerStyles}
   background-color: #f8f8f8;
-  position: relative;
+  /* position: relative; */
 `;
 
 export const Title = styled.h1`
@@ -151,7 +151,7 @@ export const HeroImage = styled.img`
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 360px) {
     width: 200px;
   }
 `;
