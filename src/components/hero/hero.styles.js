@@ -109,6 +109,7 @@ export const HeroContainer = styled.div`
   height: 100%;
   ${containerStyles}
   background-color: #f8f8f8;
+  position: relative;
 `;
 
 export const Title = styled.h1`
